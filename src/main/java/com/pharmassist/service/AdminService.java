@@ -8,4 +8,9 @@ import com.pharmassist.repository.AdminRepository;
 public class AdminService {
 
 	private final AdminRepository adminRepository;
+
+	public AdminService(AdminRepository adminRepository) {
+		super();
+		this.adminRepository = adminRepository;
+	}
 }

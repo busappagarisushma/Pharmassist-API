@@ -8,5 +8,12 @@ import com.pharmassist.service.AdminService;
 public class AdminController {
 
 	private final AdminService adminService;
+
+	public AdminController(AdminService adminService) {
+		super();
+		this.adminService = adminService;
+	}
+	
+	
 	
 }
