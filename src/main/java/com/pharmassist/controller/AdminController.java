@@ -3,6 +3,7 @@ package com.pharmassist.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.pharmassist.service.AdminService;
+import com.pharmassist.util.AppResponseBuilder;
 
 import io.swagger.v3.oas.annotations.tags.Tag;
 
@@ -11,12 +12,14 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 public class AdminController {
 
 	private final AdminService adminService;
+	private final AppResponseBuilder appResponseBuilder;
 
-	public AdminController(AdminService adminService) {
+
+	public AdminController(AdminService adminService, AppResponseBuilder appResponseBuilder) {
 		super();
 		this.adminService = adminService;
+		this.appResponseBuilder = appResponseBuilder;
 	}
-	
-	
-	
+
+
 }
