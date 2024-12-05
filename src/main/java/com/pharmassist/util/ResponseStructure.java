@@ -1,5 +1,8 @@
 package com.pharmassist.util;
 
+import org.springframework.data.annotation.CreatedBy;
+import org.springframework.http.HttpStatus;
+
 public class ResponseStructure<T> {
 
 	private int status;
@@ -26,4 +29,13 @@ public class ResponseStructure<T> {
 		this.data = data;
 	}
 
+	public static  <T> ResponseStructure<T> Create(HttpStatus status, String message, T data){
+
+		ResponseStructure<T>  responseStructure = new ResponseStructure<T>();
+		responseStructure.setStatus(status.value());
+		responseStructure.setMessage(message);
+		responseStructure.setData(data);
+
+		return responseStructure;
+	}
 }
