@@ -12,5 +12,9 @@ public class AppResponseBuilder {
 				status(status)
 				.body(ResponseStructure.Create(status, message, data));
 	}
-	
+
+	public <T> ResponseEntity<ErrorStructure<T>> error(HttpStatus status,String message,T rootCause){
+		return ResponseEntity.status(status)
+				.body(ErrorStructure.create(status.value(), message, rootCause));
+	}
 }
